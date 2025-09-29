@@ -71,16 +71,19 @@ Demonstrate mastery of PL/SQL window functions by solving a realistic business p
 *Insertion*
 ![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/booking%20insert%20query.jpg?raw=true)
 ![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/booking%20insert.JPG?raw=true)
-5. **Payments**
+4. **Payments**
+
 *Creation* 
-img
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/payment%20creation.jpg?raw=true)
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/payment%20model.jpg?raw=true)
 *Insertion*
-img
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/payment%20insert.JPG?raw=true)
+
 
 ## 4. Windows Functions Implementation
 
 1. **Ranking** : Find the Top Guests by Total Spending  
-*Query:*  
+* *Query:*  
 ```sql
 SELECT g.guest_id, -- selects guests by id
        g.first_name || ' ' || g.last_name AS guest_name, -- retrieval of guest names
@@ -92,7 +95,7 @@ JOIN Payments p ON b.booking_id = p.booking_id
 GROUP BY g.guest_id, g.first_name, g.last_name; -- joining and grouping
 ```
 * Results
-img
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/func1.jpg?raw=true)
 
 2. **Aggregate** : Compare performance of room categories
 * Query :
@@ -105,7 +108,7 @@ LEFT JOIN Bookings b ON r.room_id = b.room_id
 GROUP BY r.room_type, b.room_id; --Joining and grouping
 ```
 * Results
-img
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/func2.jpg?raw=true)
 
 3. **Aggregate** : Track how revenue grows day by day
 * Query :
@@ -118,7 +121,7 @@ img
     ORDER BY p.payment_date; -- grouping and order
 ```
 * Results
-img
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/func3.jpg?raw=true)
 
 4. **Navigation** : Spot peak seasons & low seasons
 * Query :
@@ -132,8 +135,8 @@ FROM Payments p
 GROUP BY TO_CHAR(p.payment_date, 'YYYY-MM')
 ORDER BY month;
 ```
-*Result 
-img
+* Result 
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/func4.jpg?raw=true)
 5. **Distribution** : Divide guests into spending quartiles
 * Query :
 ```sql
@@ -148,7 +151,7 @@ GROUP BY g.guest_id, g.first_name, g.last_name
 ORDER BY spending_quartile, total_spent DESC; --ordering and grouping
 ```
  * Result 
- img
+ ![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/Func5.PNG?raw=true)
 ## 5. Result Analysis 
 **1. Descriptive** 
 
