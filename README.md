@@ -55,16 +55,23 @@ Demonstrate mastery of PL/SQL window functions by solving a realistic business p
 
 ![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/guest%20insert.jpg?raw=true)
 2. **Rooms** 
+
 *Creation* 
-img
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/room%20creation.jpg?raw=true)
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/room%20model.jpg?raw=true)
 *Insertion*
-img
-3. **Bookings** 
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/room%20insert%20query.jpg?raw=true)
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/room%20insert.JPG?raw=true)
+
+3. **Bookings**
+   
 *Creation* 
-img
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/booking%20creation%20.jpg?raw=true)
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/booking%20model%20.jpg?raw=true)
 *Insertion*
-img
-4. **Payments**
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/booking%20insert%20query.jpg?raw=true)
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/booking%20insert.JPG?raw=true)
+5. **Payments**
 *Creation* 
 img
 *Insertion*
