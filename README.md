@@ -66,47 +66,51 @@ img
 img
 
 ## 4. Windows Functions Implementation
-1. **Ranking** :Find the Top Guests by Total Spending 
-* Query : 
-´´´sql   
-    SELECT g.guest_id, -- selects guests by id
-       g.first_name || ' ' || g.last_name AS guest_name, --retreival of guests names
-       SUM(p.amount_paid) AS total_spent, --sum of amounts paid
-       RANK() OVER (ORDER BY SUM(p.amount_paid) DESC) AS spending_rank --ranking from most least
+
+1. **Ranking** : Find the Top Guests by Total Spending  
+*Query:*  
+```sql
+SELECT g.guest_id, -- selects guests by id
+       g.first_name || ' ' || g.last_name AS guest_name, -- retrieval of guest names
+       SUM(p.amount_paid) AS total_spent, -- sum of amounts paid
+       RANK() OVER (ORDER BY SUM(p.amount_paid) DESC) AS spending_rank -- ranking from most to least
 FROM Guests g
 JOIN Bookings b ON g.guest_id = b.guest_id
 JOIN Payments p ON b.booking_id = p.booking_id
-GROUP BY g.guest_id, g.first_name, g.last_name; --joining and grouping
-´´´
+GROUP BY g.guest_id, g.first_name, g.last_name; -- joining and grouping
+```
 * Results
 img
 
 2. **Aggregate** : Compare performance of room categories
-* Query : 
+* Query :
+```sql
 SELECT r.room_type, --selction of room by type
        COUNT(b.booking_id) AS total_bookings, --counting bookings
        ROUND(AVG(COUNT(b.booking_id)) OVER (PARTITION BY r.room_type), 2) AS avg_bookings_per_type --averaging the counted bookings per room type
 FROM Rooms r
 LEFT JOIN Bookings b ON r.room_id = b.room_id
 GROUP BY r.room_type, b.room_id; --Joining and grouping
-
+```
 * Results
 img
+
 3. **Aggregate** : Track how revenue grows day by day
 * Query :
-
+```sql
     SELECT p.payment_date, --selection of payments date 
            SUM(p.amount_paid) AS daily_revenue, -- sum per day
            SUM(SUM(p.amount_paid)) OVER (ORDER BY p.payment_date) AS cumulative_revenue -- cumulative payments ordered by date
     FROM Payments p
     GROUP BY p.payment_date
     ORDER BY p.payment_date; -- grouping and order
-
+```
 * Results
 img
 
 4. **Navigation** : Spot peak seasons & low seasons
 * Query :
+```sql
 SELECT TO_CHAR(p.payment_date, 'YYYY-MM') AS month, -- Selection of payments by month
        SUM(p.amount_paid) AS monthly_revenue,
        LAG(SUM(p.amount_paid)) OVER (ORDER BY TO_CHAR(p.payment_date, 'YYYY-MM')) AS prev_month_revenue, -- Calculations over time
@@ -115,11 +119,12 @@ SELECT TO_CHAR(p.payment_date, 'YYYY-MM') AS month, -- Selection of payments by 
 FROM Payments p
 GROUP BY TO_CHAR(p.payment_date, 'YYYY-MM')
 ORDER BY month;
-
+```
 *Result 
 img
 5. **Distribution** : Divide guests into spending quartiles
 * Query :
+```sql
 SELECT g.guest_id, --Selection by guest id
        g.first_name || ' ' || g.last_name AS guest_name,
        SUM(p.amount_paid) AS total_spent, --calculation of spending
@@ -129,7 +134,7 @@ JOIN Bookings b ON g.guest_id = b.guest_id
 JOIN Payments p ON b.booking_id = p.booking_id
 GROUP BY g.guest_id, g.first_name, g.last_name
 ORDER BY spending_quartile, total_spent DESC; --ordering and grouping
-
+```
  * Result 
  img
 ## 5. Result Analysis 
