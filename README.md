@@ -41,12 +41,12 @@ Demonstrate mastery of PL/SQL window functions by solving a realistic business p
 |Bookings| Stores bookings information|booking_id, guest_id, room_id|1, 1, 1, DATE '2025-01-12', DATE '2025-01-14', DATE '2025-01-10', 'Checked-out'|
 |Payments|Tracks payments of bookings|payment_id, booking_id|1, 1, 40000, DATE '2025-01-12', 'Cash'|
 ### ER Diagram
-img
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/mermaid-diagram-2025-09-29-195300.png?raw=true)
 ### Tables creation and data insertions
 *** 
 1. **Guests** 
 *Creation* 
-img
+![image alt]
 *Insertion*
 img
 2. **Rooms** 
