@@ -52,6 +52,8 @@ Demonstrate mastery of PL/SQL window functions by solving a realistic business p
 ![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/guest%20model.jpg?raw=true)
 *Insertion*
 ![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/guest%20insert%20query.jpg?raw=true)
+
+![image alt](https://github.com/iradukundafirmin/-plsql-window-functions-iradukunda-firmin/blob/main/guest%20insert.jpg?raw=true)
 2. **Rooms** 
 *Creation* 
 img
